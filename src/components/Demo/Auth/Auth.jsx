@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Model from "../../../utils/Model";
 import { LiaTimesSolid } from "react-icons/lia";
-
 const Auth = () => {
   const [createUser, setCreateUser] = useState(true);
 
@@ -10,7 +9,10 @@ const Auth = () => {
       <section
         className={`z-50 fixed top-[5rem] bottom-auto left-0 md:left-[10rem] lg:left-[20rem] overflow-auto right-0 md:right-[10rem] lg:right-[20rem] bg-white shadow-lg rounded`}
       >
-        <button className="absolute top-8 right-8 text-2xl hover:opacity-50 ">
+        <button
+          className="absolute top-8 right-8 text-2xl hover:opacity-50 "
+          onClick={() => setShowLogin(false)}
+        >
           <LiaTimesSolid />
         </button>
         <h2 className="text-3xl pt-[5rem] text-center ">
