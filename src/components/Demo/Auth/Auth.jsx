@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import Model from "../../../utils/Model";
 import { LiaTimesSolid } from "react-icons/lia";
+import DemoHeader from "../DemoHeader";
 const Auth = () => {
   const [createUser, setCreateUser] = useState(true);
+  const [showLogin, setShowLogin] = useState(false);
 
   return (
     <div className="bg-white/50 fixed inset-0 z-10">

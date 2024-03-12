@@ -38,18 +38,22 @@ const DemoHeader = () => {
             ))}
           </div>
           <div className="relative">
-            <Link to="./Auth">
+            {/* <Link to="./Auth"> */}
+
+            <a href="./Auth">
               <button
                 className="hidden text-sm sm:flex items-center gap-5"
                 onClick={() => setShowLogin(true)}
               >
                 Log In
               </button>
-            </Link>
+            </a>
+
+            {/* </Link> */}
 
             {/* <Auth /> */}
 
-            {showLogin && <Auth />}
+            {/* {showLogin && <Auth />} */}
           </div>
           <button
             className={`rounded-full text-white px-3 p-2 text-sm font-medium

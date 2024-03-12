@@ -18,6 +18,10 @@
   font-weight: bolder;
 
 }
-shadows{
+.shadows{
   box-shadow: 0px 4px 15px 10px rgb(182,182,182);
 } 
+.write .ql-editor{
+  font-size: 1.2rem !important;
+  padding: 0 !important;
+}

@@ -9,6 +9,6 @@ export const nav = [
   },
   {
     title: "Write",
-    path: "/",
+    path: "/write",
   },
 ];

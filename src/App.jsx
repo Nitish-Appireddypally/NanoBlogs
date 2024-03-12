@@ -4,6 +4,7 @@ import Demo from "./components/Demo/Demo";
 import DemoHeader from "./components/Demo/DemoHeader";
 import HomeHeader from "./components/Home/HomeHeader";
 import Auth from "./components/Demo/Auth/Auth";
+import Write from "./components/Demo/Write/Write";
 
 function App() {
   const auth = false;
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/demo" element={<Demo />} />
         <Route path="/auth" element={<Auth />} />
+        <Route path="/write" element={<Write />} />
       </Routes>
     </>
   );
