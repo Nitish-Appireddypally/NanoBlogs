@@ -33,6 +33,7 @@ const DemoHeader = () => {
           <div className="hidden text-sm sm:flex items-center gap-5">
             {nav.map((link, i) => (
               <Link key={i} to={link.path}>
+                {console.log(link)}
                 {link.title}
               </Link>
             ))}

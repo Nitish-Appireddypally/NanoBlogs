@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Model from "../../../utils/Model";
 import { LiaTimesSolid } from "react-icons/lia";
 import DemoHeader from "../DemoHeader";
+import { Link } from "react-router-dom";
 const Auth = () => {
   const [createUser, setCreateUser] = useState(true);
   const [showLogin, setShowLogin] = useState(false);
@@ -11,12 +12,15 @@ const Auth = () => {
       <section
         className={`z-50 fixed top-[5rem] bottom-auto left-0 md:left-[10rem] lg:left-[20rem] overflow-auto right-0 md:right-[10rem] lg:right-[20rem] bg-white shadow-lg rounded`}
       >
-        <button
-          className="absolute top-8 right-8 text-2xl hover:opacity-50 "
-          onClick={() => setShowLogin(false)}
-        >
-          <LiaTimesSolid />
-        </button>
+        <Link to="/">
+          <button
+            className="absolute top-8 right-8 text-2xl hover:opacity-50 "
+            // onClick={() => setShowLogin(false)}
+          >
+            <LiaTimesSolid />
+          </button>
+        </Link>
+
         <h2 className="text-3xl pt-[5rem] text-center ">
           {createUser ? "Log In" : "Sign Up"}
         </h2>
@@ -26,19 +30,6 @@ const Auth = () => {
               Enter your username and password to access your account
             </p>
             <div className="flex flex-col justify-center items-center gap-[3rem]">
-              {/* <div className="flex justify-center items-center gap-[2rem]">
-            <input
-              type="text"
-              placeholder="First Name"
-              className="py-3 px-4 border border-black rounded w-[10.5rem] rounded-full"
-            />
-            <input
-              type="text"
-              placeholder="Last Name"
-              className="py-3 px-4 border border-black rounded w-[10.5rem] rounded-full"
-            />
-          </div> */}
-
               <div className="flex flex-col justify-center items-center gap-[3rem]">
                 <Input type="text" placeholder="Username" />
                 <Input type="password" placeholder="Password" />

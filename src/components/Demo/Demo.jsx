@@ -1,8 +1,10 @@
 import React from "react";
+import DemoHeader from "./DemoHeader";
 
-const Demo = () => {
+const Demo = ({ onButtonClick }) => {
   return (
     <>
+      <DemoHeader />
       <div>Demo</div>
       <div>Demo</div>
       <div>Demo</div>

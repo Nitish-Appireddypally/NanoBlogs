@@ -1,9 +1,13 @@
-import React from 'react'
+import React from "react";
 
 const HomeHeader = () => {
   return (
-    <div>HomeHeader</div>
-  )
-}
+    <>
+      <header className="border-b border-black sticky top-0 z-50 bg-yellow-500">
+        HEADER
+      </header>
+    </>
+  );
+};
 
-export default HomeHeader
+export default HomeHeader;

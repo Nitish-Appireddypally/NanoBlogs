@@ -1,3 +1,4 @@
+import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Home from "./components/Home/Home";
 import Demo from "./components/Demo/Demo";
@@ -7,14 +8,15 @@ import Auth from "./components/Demo/Auth/Auth";
 import Write from "./components/Demo/Write/Write";
 
 function App() {
-  const auth = false;
+  const auth = true;
 
   return (
     <>
-      {auth ? <HomeHeader /> : <DemoHeader />}
+      {/* {auth ? <Home /> : <Demo />} */}
+
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/demo" element={<Demo />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/" element={<Demo />} />
         <Route path="/auth" element={<Auth />} />
         <Route path="/write" element={<Write />} />
       </Routes>

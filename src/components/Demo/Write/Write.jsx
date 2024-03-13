@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ReactQuill from "react-quill";
 // import Preview from "./Preview";
 
-const Write = () => {
+const Write = ({ onExitButtonClick }) => {
   const [description, setDescription] = useState("");
   const [title, setTitle] = useState("");
   //   const { publish, setPublish } = Blog();
@@ -22,6 +22,7 @@ const Write = () => {
         placeholder="Tell Your Story..."
         className="write my-5 "
       />
+
       {/* <div
         className={`${
           publish ? "visible opacity-100" : "invisible opacity-0"
