@@ -4,17 +4,22 @@ import { LiaTimesSolid } from "react-icons/lia";
 import { Link } from "react-router-dom";
 
 function SignupAuth({ onButtonClick }) {
-  //   const [username, setUsername] = useState('');
-  //   const [password, setPassword] = useState('');
+  const [firstname, setfirstname] = useState("");
+  const [lastname, setlastname] = useState("");
+  const [userName, setUserName] = useState("");
+
+  const [password, setPassword] = useState("");
+
   const SignupData = {
-    name: "Kabali",
-    username: "kabali",
-    password: "bullshit",
+    name: `${firstname} ${lastname}`,
+    username: `${userName}`,
+    password: `${password}`,
     category: ["love", "memories"],
   };
 
   const handleSignup = async () => {
     try {
+      console.log(SignupData);
       const response = await axios.post("http://localhost:3000/auth/signup", {
         SignupData,
       });
@@ -49,11 +54,15 @@ function SignupAuth({ onButtonClick }) {
               <div className="flex justify-center items-center gap-[2rem]">
                 <input
                   type="text"
+                  value={firstname}
+                  onChange={(e) => setfirstname(e.target.value)}
                   placeholder="First Name"
                   className="py-3 px-4 border border-black rounded w-[10.5rem] rounded-lg"
                 />
                 <input
                   type="text"
+                  value={lastname}
+                  onChange={(e) => setlastname(e.target.value)}
                   placeholder="Last Name"
                   className="py-3 px-4 border border-black rounded w-[10.5rem] rounded-lg"
                 />
@@ -63,11 +72,15 @@ function SignupAuth({ onButtonClick }) {
                 <input
                   type="text"
                   placeholder="Username"
+                  value={userName}
+                  onChange={(e) => setUserName(e.target.value)}
                   className="py-3 px-4 border border-black rounded w-[23rem] rounded-lg"
                 />
                 <input
                   type="password"
                   placeholder="Password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                   className="py-3 px-4 border border-black rounded w-[23rem] rounded-lg"
                 />
                 <input

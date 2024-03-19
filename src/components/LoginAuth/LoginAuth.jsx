@@ -4,15 +4,24 @@ import { LiaTimesSolid } from "react-icons/lia";
 import { Link } from "react-router-dom";
 
 function LoginAuth({ onButtonClick }) {
-  //   const [username, setUsername] = useState('');
-  //   const [password, setPassword] = useState('');
-  const LoginData = {
-    username: "kabali",
-    password: "bullshit",
+  const [userName, setUserName] = useState("");
+  const [passWord, setPassword] = useState("");
+  const handleUsernameChange = (event) => {
+    setUserName(event.target.value);
   };
 
-  const handleLogin = async () => {
+  const handlePasswordChange = (event) => {
+    setPassword(event.target.value);
+  };
+  const LoginData = {
+    username: `${userName}`,
+    password: `${passWord}`,
+  };
+
+  const handleLogin = async (event) => {
     try {
+      event.preventDefault();
+      console.log(LoginData);
       const response = await axios.post("http://localhost:3000/auth/login", {
         LoginData,
       });
@@ -48,11 +57,15 @@ function LoginAuth({ onButtonClick }) {
               <div className="flex flex-col justify-center items-center gap-[3rem]">
                 <input
                   type="text"
+                  value={userName}
+                  onChange={handleUsernameChange}
                   placeholder="Username"
                   className="py-3 px-4 border border-black rounded w-[23rem] rounded-lg"
                 />
                 <input
                   type="password"
+                  value={passWord}
+                  onChange={handlePasswordChange}
                   placeholder="Password"
                   className="py-3 px-4 border border-black rounded w-[23rem] rounded-lg"
                 />
