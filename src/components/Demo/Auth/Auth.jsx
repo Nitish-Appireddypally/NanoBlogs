@@ -3,9 +3,48 @@ import Model from "../../../utils/Model";
 import { LiaTimesSolid } from "react-icons/lia";
 import DemoHeader from "../DemoHeader";
 import { Link } from "react-router-dom";
+import axios from "axios";
+
 const Auth = () => {
   const [createUser, setCreateUser] = useState(true);
   const [showLogin, setShowLogin] = useState(false);
+
+  const SignupData = {
+    username: "kabali",
+    password: "bullshit",
+    password: "bullshit",
+    category: ["love", "memories"],
+  };
+  const LoginData = {
+    username: "kabali",
+    password: "bullshit",
+  };
+
+  const handleSignup = async () => {
+    try {
+      const response = await axios.post("http://localhost:3000/auth/signup", {
+        SignupData,
+      });
+      console.log("Signup successful:", response.data);
+      // Handle storing tokens in local storage
+    } catch (error) {
+      console.error("Signup failed:", error);
+      // Handle displaying error message to user
+    }
+  };
+
+  const handleLogin = async () => {
+    try {
+      const response = await axios.post("http://localhost:3000/auth/login", {
+        LoginData,
+      });
+      console.log("Login successful:", response.data);
+      // Handle storing tokens in local storage
+    } catch (error) {
+      console.error("Signup failed:", error);
+      // Handle displaying error message to user
+    }
+  };
 
   return (
     <div className="bg-white/50 fixed inset-0 z-10">
@@ -47,7 +86,10 @@ const Auth = () => {
             </div>
 
             <div className="flex justify-center mt-10">
-              <button className="w-32 border border-black rounded-full py-2 bg-gray-500 text-white font-bold mb-10">
+              <button
+                className="w-32 border border-black rounded-full py-2 bg-gray-500 text-white font-bold mb-10"
+                onClick={handleLogin}
+              >
                 Submit
               </button>
             </div>
@@ -89,7 +131,10 @@ const Auth = () => {
             </div>
 
             <div className="flex justify-center mt-10">
-              <button className="w-32 border border-black rounded-full py-2 bg-gray-500 text-white font-bold mb-10">
+              <button
+                className="w-32 border border-black rounded-full py-2 bg-gray-500 text-white font-bold mb-10"
+                onClick={handleSignup}
+              >
                 Submit
               </button>
             </div>
