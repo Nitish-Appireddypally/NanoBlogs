@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Cookies from "js-cookie";
-
 import { LiaTimesSolid } from "react-icons/lia";
 import { Link } from "react-router-dom";
 import { FaUserAlt } from "react-icons/fa";
@@ -12,6 +11,7 @@ function LoginAuth({ onButtonClick }) {
   const [userName, setUserName] = useState("");
   const [passWord, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [isLoggedin, setisLoggedin] = useState(false);
   const handleUsernameChange = (event) => {
     setUserName(event.target.value);
   };
@@ -28,28 +28,32 @@ function LoginAuth({ onButtonClick }) {
     try {
       event.preventDefault();
       console.log(LoginData);
-      const response = await axios.post("http://localhost:3000/auth/login", {
-        LoginData,
-      });
+      const response = await axios.post(
+        "http://localhost:3000/auth/login",
+        LoginData
+      );
       const responseData = response.data;
-      console.log("Login successful:", responseData);
-      // Handle storing tokens in local storage
-      Cookies.set("access_token", responseData.access_token);
-      Cookies.set("refresh_token", responseData.refresh_token);
-      // Cookies.set("Nitish", "RCB");
-      const myAccessToken = Cookies.get("access_token");
-      const myRefreshToken = Cookies.get("refresh_token");
+      console.log(response);
+      if (response.status === 200) {
+        setisLoggedin(true);
+        window.location.href = "/home";
+        console.log("Login successful:", responseData);
+        Cookies.set("access_token", responseData.access_token);
+        Cookies.set("refresh_token", responseData.refresh_token);
+        const myAccessToken = Cookies.get("access_token");
+        const myRefreshToken = Cookies.get("refresh_token");
 
-      console.log("Access token : ", myAccessToken);
-      console.log("Refresh token : ", myRefreshToken);
+        console.log("Access token : ", myAccessToken);
+        console.log("Refresh token : ", myRefreshToken);
+      }
     } catch (error) {
       console.error("Login failed:", error);
-      // Handle displaying error message to user
     }
   };
 
   return (
     <>
+      {/* Redirect to /home if redirectToHome is true */}
       <div className="bg-color fixed inset-0 z-10">
         <section
           className={`z-50 fixed top-[5rem] bottom-auto left-0 md:left-[10rem] lg:left-[20rem] overflow-auto right-0 md:right-[10rem] lg:right-[20rem] bg-white opacity-70 shadow-lg rounded-3xl shadow-out`}

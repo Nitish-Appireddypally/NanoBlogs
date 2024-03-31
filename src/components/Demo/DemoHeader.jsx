@@ -49,12 +49,6 @@ const DemoHeader = () => {
                 Log In
               </button>
             </a>
-
-            {/* </Link> */}
-
-            {/* <Auth /> */}
-
-            {/* {showLogin && <Auth />} */}
           </div>
           <button
             className={`rounded-full text-white px-3 p-2 text-sm font-medium

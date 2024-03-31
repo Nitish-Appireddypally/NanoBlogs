@@ -28,12 +28,12 @@ function SignupAuth({ onButtonClick }) {
   const handleSignup = async () => {
     try {
       console.log(SignupData);
-      const response = await axios.post("http://localhost:3000/auth/signup", {
-        SignupData,
-      });
+      const response = await axios.post(
+        "http://localhost:3000/auth/signup",
+        SignupData
+      );
       const responseData = response.data;
       console.log("Signup successful:", responseData);
-      // Handle storing tokens in local storage
       Cookies.set("access_token", responseData.access_token);
       Cookies.set("refresh_token", responseData.refresh_token);
       // Cookies.set("Nitish", "RCB");
@@ -44,7 +44,6 @@ function SignupAuth({ onButtonClick }) {
       console.log("Refresh token : ", myRefreshToken);
     } catch (error) {
       console.error("Signup failed:", error);
-      // Handle displaying error message to user
     }
   };
 
@@ -65,7 +64,7 @@ function SignupAuth({ onButtonClick }) {
           <h2 className="text-3xl pt-[2rem] text-center ">Sign Up</h2>
           <div>
             <p className="mt-3 mb-10 text-center text-[0.8rem]">
-              Enter your credentials to create your account
+              Enter the credentials to create your account
             </p>
             <div className="flex flex-col justify-center items-center gap-[3rem]">
               <div className="flex justify-center items-center gap-[2rem]">

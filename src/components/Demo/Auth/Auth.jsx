@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import LoginAuth from "../../LoginAuth/LoginAuth";
 import SignupAuth from "../../SignupAuth/SignupAuth";
+import { Router } from "react-router-dom";
 // import { motion } from "framer-motion";
 
 const Auth = () => {
