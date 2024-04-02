@@ -36,7 +36,7 @@ function LoginAuth({ onButtonClick }) {
       console.log(response);
       if (response.status === 200) {
         setisLoggedin(true);
-        window.location.href = "/home";
+        // window.location.href = "/home";
         console.log("Login successful:", responseData);
         Cookies.set("access_token", responseData.access_token);
         Cookies.set("refresh_token", responseData.refresh_token);
