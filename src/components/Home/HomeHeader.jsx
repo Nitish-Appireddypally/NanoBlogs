@@ -1,5 +1,9 @@
 import React from "react";
 import { IoSearch } from "react-icons/io5";
+import { FaRegEdit } from "react-icons/fa";
+
+import { Link } from "react-router-dom";
+import { nav } from "../utils/data";
 
 const HomeHeader = () => {
   return (
@@ -14,17 +18,25 @@ const HomeHeader = () => {
               Explore the Blogosphere
             </span> */}
           </button>
-          <div className="relative flex">
-            {" "}
-            <div className="absolute inset-y-0 left-0 flex items-center pl-2 pointer-events-none">
+          <div className="flex items-center justify-between">
+            <a href="./write">
+              <button className="mr-10 flex items-center gap-2">
+                <FaRegEdit />
+                Write
+              </button>
+            </a>
+            <div className="relative flex">
               {" "}
-              <IoSearch />
+              <div className="absolute inset-y-0 left-0 flex items-center pl-2 pointer-events-none">
+                {" "}
+                <IoSearch />
+              </div>
+              <input
+                className="px-8 py-2 rounded-lg"
+                type="search"
+                placeholder="Search"
+              ></input>
             </div>
-            <input
-              className="px-8 py-2 rounded-lg"
-              type="search"
-              placeholder="Search"
-            ></input>
           </div>
         </div>
       </header>

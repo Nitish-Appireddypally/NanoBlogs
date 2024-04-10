@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Navigate, useNavigate } from "react-router-dom"; // Import useHistory hook
 import axios from "axios";
 import Cookies from "js-cookie";
 import { LiaTimesSolid } from "react-icons/lia";
@@ -12,6 +13,7 @@ function LoginAuth({ onButtonClick }) {
   const [passWord, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [isLoggedin, setisLoggedin] = useState(false);
+  const navigate = useNavigate();
   const handleUsernameChange = (event) => {
     setUserName(event.target.value);
   };
@@ -37,6 +39,7 @@ function LoginAuth({ onButtonClick }) {
       if (response.status === 200) {
         setisLoggedin(true);
         // window.location.href = "/home";
+        navigate("/home");
         console.log("Login successful:", responseData);
         Cookies.set("access_token", responseData.access_token);
         Cookies.set("refresh_token", responseData.refresh_token);
