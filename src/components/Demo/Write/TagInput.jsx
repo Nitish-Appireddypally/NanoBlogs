@@ -16,7 +16,7 @@ function TagInput() {
   const handleInputKeyPress = (event) => {
     if (event.key === "Enter" && inputValue.trim() !== "") {
       const newTags = [...tags, inputValue.trim()];
-      setTags(newTags); // Call the handler to update tags in parent component
+      setTags(newTags);
       setInputValue("");
     }
   };
