@@ -1,14 +1,14 @@
 export const nav = [
   {
-    title: "Our story",
-    path: "/",
+    title: "About us",
+    path: "/about",
   },
   {
     title: "Membership",
     path: "/",
   },
   {
-    title: "Write",
-    path: "/write",
+    title: "Log In",
+    path: "/Auth",
   },
 ];
