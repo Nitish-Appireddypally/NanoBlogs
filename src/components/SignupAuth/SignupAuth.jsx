@@ -49,9 +49,9 @@ function SignupAuth({ onButtonClick }) {
 
   return (
     <>
-      <div className="bg-color fixed inset-0 z-10">
+      <div className="bg-gray-200 fixed inset-0 z-10">
         <section
-          className={`z-50 fixed top-[5rem] bottom-auto left-0 md:left-[10rem] lg:left-[20rem] overflow-auto right-0 md:right-[10rem] lg:right-[20rem] bg-white opacity-70 shadow-lg rounded`}
+          className={`z-50 fixed top-[5rem] bottom-auto left-0 md:left-[10rem] lg:left-[20rem] overflow-auto right-0 md:right-[10rem] lg:right-[20rem] bg-transparent opacity-80 shadow-xl rounded-2xl shadow-out`}
         >
           <Link to="/">
             <button
@@ -73,14 +73,14 @@ function SignupAuth({ onButtonClick }) {
                   value={firstname}
                   onChange={(e) => setfirstname(e.target.value)}
                   placeholder="First Name"
-                  className="py-3 px-4 border border-black rounded w-[10.5rem] rounded-lg"
+                  className="py-3 px-4 border rounded w-[10.5rem] rounded-lg outline-none"
                 />
                 <input
                   type="text"
                   value={lastname}
                   onChange={(e) => setlastname(e.target.value)}
                   placeholder="Last Name"
-                  className="py-3 px-4 border border-black rounded w-[10.5rem] rounded-lg"
+                  className="py-3 px-4 border rounded w-[10.5rem] rounded-lg outline-none"
                 />
               </div>
               <div className="flex flex-col justify-center items-center gap-[3rem]">
@@ -90,7 +90,7 @@ function SignupAuth({ onButtonClick }) {
                     placeholder="Username"
                     value={userName}
                     onChange={(e) => setUserName(e.target.value)}
-                    className="py-3 px-4 border border-black rounded w-[23rem] rounded-lg"
+                    className="py-3 px-4 border  rounded w-[23rem] rounded-lg outline-none"
                   />
                   <FaUserAlt className="absolute right-5 top-1/2 transform -translate-y-1/2 " />
                 </div>
@@ -100,7 +100,7 @@ function SignupAuth({ onButtonClick }) {
                     placeholder="Password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    className="py-3 px-4 border border-black rounded w-[23rem] rounded-lg"
+                    className="py-3 px-4 border rounded w-[23rem] rounded-lg outline-none"
                   />
                   {showPassword ? (
                     <div className="cursor-pointer">
@@ -126,7 +126,7 @@ function SignupAuth({ onButtonClick }) {
                   <input
                     type={showConfirmPassword ? "text" : "password"}
                     placeholder="Confirm Password"
-                    className="py-3 px-4 border border-black rounded w-[23rem] rounded-lg"
+                    className="py-3 px-4 border rounded w-[23rem] rounded-lg outline-none"
                   />
                   {showConfirmPassword ? (
                     <div className="cursor-pointer">
@@ -154,7 +154,7 @@ function SignupAuth({ onButtonClick }) {
             <div className="flex justify-center mt-10 ">
               <p>Already have an account? </p>
               <button
-                className="ml-1 text-blue-700 font-semibold"
+                className="ml-1 text-aquamarine font-semibold"
                 onClick={onButtonClick}
               >
                 Log In

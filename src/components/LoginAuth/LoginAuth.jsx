@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Navigate, useNavigate } from "react-router-dom"; // Import useHistory hook
+import { Navigate, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Cookies from "js-cookie";
 import { LiaTimesSolid } from "react-icons/lia";
@@ -57,9 +57,9 @@ function LoginAuth({ onButtonClick }) {
   return (
     <>
       {/* Redirect to /home if redirectToHome is true */}
-      <div className="bg-color fixed inset-0 z-10">
+      <div className="bg-gray-200 fixed inset-0 z-10">
         <section
-          className={`z-50 fixed top-[5rem] bottom-auto left-0 md:left-[10rem] lg:left-[20rem] overflow-auto right-0 md:right-[10rem] lg:right-[20rem] bg-white opacity-70 shadow-lg rounded-3xl shadow-out`}
+          className={`z-50 fixed top-[5rem] bottom-auto left-0 md:left-[10rem] lg:left-[20rem] overflow-auto right-0 md:right-[10rem] lg:right-[20rem] bg-transparent opacity-80 shadow-xl rounded-2xl shadow-out`}
         >
           <Link to="/">
             <button
@@ -83,7 +83,7 @@ function LoginAuth({ onButtonClick }) {
                     value={userName}
                     onChange={handleUsernameChange}
                     placeholder="Username"
-                    className="py-3 px-4 border border-black rounded w-[23rem] rounded-lg bg-transparent outline-none"
+                    className="py-3 px-4 border rounded w-[23rem] rounded-lg outline-none"
                   />
                   <FaUserAlt className="absolute right-5 top-1/2 transform -translate-y-1/2 " />
                 </div>
@@ -93,7 +93,7 @@ function LoginAuth({ onButtonClick }) {
                     value={passWord}
                     onChange={handlePasswordChange}
                     placeholder="Password"
-                    className="py-3 px-4 border border-black rounded w-[23rem] rounded-lg bg-transparent outline-none"
+                    className="py-3 px-4 border rounded w-[23rem] rounded-lg outline-none"
                   />
                   <FaLock className="absolute right-5 top-1/2 transform -translate-y-1/2 " />
                 </div>
