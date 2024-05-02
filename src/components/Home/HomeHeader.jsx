@@ -57,7 +57,7 @@ const HomeHeader = () => {
       <div className="container mx-auto h-16 flex items-center justify-between">
         <div className="flex items-center">
           <Link
-            to="/"
+            to="/home"
             className="flex items-center gap-1 text-gray-800 font-semibold"
           >
             <span className="text-xl">NanoBlogs</span>
