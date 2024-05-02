@@ -52,6 +52,7 @@ function TagInput() {
         // setShowTagInput(true);
         // Navigate to "/tagsinput" route
         console.log("Successfully published...");
+        navigate("/home");
       }
     } catch (error) {
       console.error("Publish failed:", error);

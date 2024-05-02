@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { VscEye } from "react-icons/vsc";
 import { VscEyeClosed } from "react-icons/vsc";
 import { FaUserAlt } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 function SignupAuth({ onButtonClick }) {
   useEffect(() => {}, []);
@@ -15,6 +16,7 @@ function SignupAuth({ onButtonClick }) {
   const [userName, setUserName] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setConfirmPassword] = useState(false);
+  const navigate = useNavigate();
 
   const [password, setPassword] = useState("");
 
@@ -42,6 +44,9 @@ function SignupAuth({ onButtonClick }) {
 
       console.log("Access token : ", myAccessToken);
       console.log("Refresh token : ", myRefreshToken);
+      if (response.status == 200) {
+        navigate("/home");
+      }
     } catch (error) {
       console.error("Signup failed:", error);
     }
